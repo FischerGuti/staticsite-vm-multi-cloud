@@ -6,7 +6,7 @@ terraform {
     }
   }
    backend "s3" {
-    bucket         = "fishinho"
+    bucket         = "coringuinhavaiperder232"
     key            = "terraform.tfstate"
     dynamodb_table = "fishinho"
     region         = "us-east-1"
