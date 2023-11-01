@@ -5,10 +5,10 @@ terraform {
       version = ">= 5.23"
     }
   }
-  backend "s3" {
-    bucket         = "staticsite-vm-multicloud-001"
+   backend "s3" {
+    bucket         = "fishinho"
     key            = "terraform.tfstate"
-    dynamodb_table = "staticsite-vm-multicloud-001"
+    dynamodb_table = "fishinho"
     region         = "us-east-1"
   }
 }
