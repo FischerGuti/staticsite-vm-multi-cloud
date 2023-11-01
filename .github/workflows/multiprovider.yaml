@@ -64,6 +64,7 @@ jobs:
         ARM_TENANT_ID      : ${{ secrets.ARM_TENANT_ID }}
     
     steps:
+    
 
     - name: Step 01 - Terraform Setup
       uses: hashicorp/setup-terraform@v2
