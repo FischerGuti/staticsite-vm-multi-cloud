@@ -2,6 +2,7 @@ resource "aws_security_group" "sg_public" {
     name   = "sg_public"
     vpc_id = "${var.rede_id}"
     
+    
     egress {
         from_port   = 0
         to_port     = 0
