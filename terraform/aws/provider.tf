@@ -5,8 +5,8 @@ terraform {
       version = ">= 5.23"
     }
   }
-   backend "s3" {
-    bucket         = "coringuinhavaiperder232"
+  backend "s3" {
+   bucket         = "coringuinhavaiperder232"
     key            = "terraform.tfstate"
     dynamodb_table = "fishinho"
     region         = "us-east-1"
@@ -15,5 +15,4 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
-  
 }
