@@ -5,7 +5,7 @@ on:
     branches:
     - develop
     paths:
-    -  '**.tf'
+    
 
 env:
   TERRAFORM_VERSION: 1.6.2
