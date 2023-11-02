@@ -15,8 +15,8 @@ terraform {
   }
   backend "azurerm" {
     resource_group_name  = "coringuinhaperdeu225"
-    storage_account_name = "conringuinhajaperdeu223"
-    container_name       = "containerdocoringuinha64gb"
+    storage_account_name = "fishinho64gb"
+    container_name       = "fishinhocontain"
     key                  = "terraform.tfstate"
   }
 }
