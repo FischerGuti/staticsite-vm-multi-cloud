@@ -55,10 +55,11 @@ resource "aws_instance" "temprete" {
     user_data              = "${base64encode(data.template_file.cloud_init.rendered)}"
 }
 
+
 resource "aws_lb" "lb" {
   name               = "lb"
   load_balancer_type = "application"
-  subnet_id           = "20.0.1.0/24"
+  subnet_id           = "aws_subnet.sn_public.id"
   security_groups    = [aws_security_group.sg_public.id]
 }
 
