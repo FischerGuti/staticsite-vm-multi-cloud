@@ -1,5 +1,5 @@
 module "rede" {
-    source      = "./modules/rede"
+    source      = "./modules/compute"
     rede_cidr   = "${var.rede_cidr}"
     subnet_cidr = "${var.subnet_cidr}"
 }

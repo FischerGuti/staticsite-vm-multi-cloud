@@ -1,13 +1,14 @@
-variable "rede_id" {}
-variable "subnet_id" {}
-variable "rede_cidr" {}
+variable "rede_cidr" {
+    type    = string
+    default = "10.0.0.0/16"
+}
+
+variable "subnet_cidr" {
+    type    = string
+    default = "10.0.1.0/24"
+}
 
 variable "ami" {
     type    = string
-    default = "ami-02e136e904f3da870"
-    validation {
-        condition     = length(var.ami) > 4 && substr(var.ami, 0, 4) == "ami-"
-        error_message = "The ami value must be a valid AMI id, starting with \"ami-\"."
-    }
+    default = "ami-0f409bae3775dc8e5"
 }
-
