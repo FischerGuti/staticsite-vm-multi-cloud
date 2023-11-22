@@ -47,7 +47,7 @@ resource "aws_instance" "instance" {
     user_data              = "${base64encode(data.template_file.cloud_init.rendered)}"
 }
 
-resource "aws_instance" "instance" {
+resource "aws_instance" "temprete" {
     ami                    = "${var.ami}"
     instance_type          = "t2.micro"
     subnet_id              = "${var.subnet_id}"
