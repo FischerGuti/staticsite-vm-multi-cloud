@@ -100,7 +100,7 @@ resource "aws_instance" "temprete" {
 data "template_file" "user_data" {
   template = file("./scripts/user_data.sh")
   vars = {
-    efs_id = aws_efs_file_system.efs.id
+   # efs_id = aws_efs_file_system.efs.id
   }
 }
 
