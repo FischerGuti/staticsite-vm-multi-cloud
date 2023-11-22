@@ -59,7 +59,7 @@ resource "aws_instance" "temprete" {
 resource "aws_lb" "lb" {
   name               = "lb"
   load_balancer_type = "application"
-  subnet_id           = "aws_subnet.sn_public.id"
+  subnet_id           = [aws_subnet.sn_public.id]
   security_groups    = [aws_security_group.sg_public.id]
 }
 
