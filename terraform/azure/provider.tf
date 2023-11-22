@@ -14,9 +14,9 @@ terraform {
     # }
   }
   backend "azurerm" {
-    resource_group_name  = "fishinho"
-    storage_account_name = "fishinho64gb"
-    container_name       = "fishinhocontain"
+    resource_group_name  = "fishinhogr"
+    storage_account_name = "fishinhogb64"
+    container_name       = "tfstate"
     key                  = "terraform.tfstate"
   }
 }

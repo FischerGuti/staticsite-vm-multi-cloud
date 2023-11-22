@@ -6,9 +6,9 @@ terraform {
     }
   }
   backend "s3" {
-   bucket         = "coringuinhavaiperder232"
+   bucket         = "gsquevaidarcertodofishinho"
     key            = "terraform.tfstate"
-    dynamodb_table = "fishinho"
+    dynamodb_table = "tabeladodofishinho"
     region         = "us-east-1"
   }
 }
