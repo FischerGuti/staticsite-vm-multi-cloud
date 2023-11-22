@@ -91,11 +91,11 @@ resource "aws_efs_mount_target" "mount1" {
   security_groups = [aws_security_group.sg_public.id]
 }
 
-resource "aws_efs_mount_target" "mount2" {
-  file_system_id  = aws_efs_file_system.efs.id
-  subnet_id       = ${var.subnet_id}"
-  security_groups = [aws_security_group.sg_public.id]
-}
+# resource "aws_efs_mount_target" "mount2" {
+ # file_system_id  = aws_efs_file_system.efs.id
+  # subnet_id       = ${var.subnet_id}"
+  # security_groups = [aws_security_group.sg_public.id]
+# }
 
 data "template_file" "user_data" {
   template = file("./scripts/user_data.sh")
