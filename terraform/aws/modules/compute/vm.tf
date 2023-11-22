@@ -97,12 +97,12 @@ resource "aws_instance" "temprete" {
   # security_groups = [aws_security_group.sg_public.id]
 # }
 
-data "template_file" "user_data" {
-  template = file("./scripts/user_data.sh")
-  vars = {
+# data "template_file" "user_data" {
+ # template = file("./scripts/user_data.sh")
+  # vars = {
    # efs_id = aws_efs_file_system.efs.id
-  }
-}
+   #}
+# }
 
 resource "aws_lb" "lb" {
   name               = "lb"
