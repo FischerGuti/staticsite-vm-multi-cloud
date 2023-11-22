@@ -55,59 +55,10 @@ resource "aws_instance" "temprete" {
     user_data              = "${base64encode(data.template_file.cloud_init.rendered)}"
 }
 
-# resource "aws_efs_file_system" "efs" {
-  #  availability_zone_name = "us-east-1a"
- # encrypted = false
-# }
-
-# resource "aws_efs_file_system_policy" "efs_policy" {
- # file_system_id                     = aws_efs_file_system.efs.id
- # bypass_policy_lockout_safety_check = true
- # policy                             = <<POLICY
-#{
- #   "Version": "2012-10-17",
-  #  "Id": "efs-policy-efs",
-   # "Statement": [
-    #    {
-     #       "Effect": "Allow",
-     #       "Principal": {
-      #          "AWS": "*"
-      #      },
-       #     "Action": [
-        #        "elasticfilesystem:*"
-         #   ],
-          #  "Resource": [
-           #     "arn:aws:elasticfilesystem:us-east-1:${data.aws_caller_identity.current.account_id}:file-system/${aws_efs_file_system.efs.id}"
-            #]
-       # }
-# ]
-# }
-# POLICY
-# }
-
-# resource "aws_efs_mount_target" "mount1" {
- # file_system_id  = aws_efs_file_system.efs.id
- # subnet_id       = "${var.subnet_id}"
- # security_groups = [aws_security_group.sg_public.id]
-# }
-
-# resource "aws_efs_mount_target" "mount2" {
- # file_system_id  = aws_efs_file_system.efs.id
-  # subnet_id       = ${var.subnet_id}"
-  # security_groups = [aws_security_group.sg_public.id]
-# }
-
-# data "template_file" "user_data" {
- # template = file("./scripts/user_data.sh")
-  # vars = {
-   # efs_id = aws_efs_file_system.efs.id
-   #}
-# }
-
 resource "aws_lb" "lb" {
   name               = "lb"
   load_balancer_type = "application"
-  subnet_id           = "${var.subnet_id}"
+  subnet_id           = "20.0.1.0/24"
   security_groups    = [aws_security_group.sg_public.id]
 }
 
